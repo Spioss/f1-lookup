@@ -1,6 +1,9 @@
 import RaceCard from "../RaceCard/RaceCard";
+import { useState } from "react";
 
 function Home() {
+	const [searchQuery, setSearchQuery] = useState("");
+
 	const races = [
 		{ id: 1, name: "Monaco GP", date: "02-06-2025", url: "#" },
 		{ id: 2, name: "Italian GP", date: "24-6-2025", url: "#" },
@@ -8,7 +11,12 @@ function Home() {
 		{ id: 4, name: "Silverstone GP", date: "12-08-2025", url: "#" },
 	];
 
-	const handleSearch = () => {};
+	const handleSearch = (e) => {
+		e.preventDefault();
+		alert(searchQuery);
+		//setSearchQuery("");
+	};
+
 	return (
 		<div className="home">
 			<form onSubmit={handleSearch} className="search-form">
@@ -16,7 +24,12 @@ function Home() {
 					type="text"
 					placeholder="Search for Races..."
 					className="search"
+					value={searchQuery}
+					onChange={(e) => setSearchQuery(e.target.value)}
 				></input>
+				<button type="submit" className="serach-btn">
+					Search
+				</button>
 			</form>
 			<div className="movie-grid">
 				{races.map((race) => (
