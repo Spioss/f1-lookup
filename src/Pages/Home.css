@@ -42,3 +42,11 @@
 .search-btn:hover {
 	background-color: hsl(357, 66%, 20%);
 }
+
+.movie-grid {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}

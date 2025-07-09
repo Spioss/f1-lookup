@@ -6,7 +6,7 @@ function NavBar() {
 	return (
 		<nav className="navbar">
 			<Link to="/" className="navbar-header">
-				F1 Lookup
+				F1 LOOKUP
 			</Link>
 			<div className="navbar-links">
 				<Link to="/" className="nav-link">

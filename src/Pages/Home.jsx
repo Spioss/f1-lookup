@@ -1,16 +1,23 @@
 import RaceCard from "../RaceCard/RaceCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { getMeetings } from "../services/api";
 import "./Home.css";
 
 function Home() {
 	const [searchQuery, setSearchQuery] = useState("");
+	const [races, setRaces] = useState([]);
 
-	const races = [
-		{ id: 1, name: "Monaco GP", date: "02-06-2025", url: "#" },
-		{ id: 2, name: "Italian GP", date: "24-6-2025", url: "#" },
-		{ id: 3, name: "Brazil GP", date: "14-07-2025", url: "#" },
-		{ id: 4, name: "Silverstone GP", date: "12-08-2025", url: "#" },
-	];
+	useEffect(() => {
+		async function fetchData() {
+			try {
+				const data = await getMeetings();
+				setRaces(data);
+			} catch (err) {
+				console.error(err);
+			}
+		}
+		fetchData();
+	}, []);
 
 	const handleSearch = (e) => {
 		e.preventDefault();
@@ -34,7 +41,13 @@ function Home() {
 			</form>
 			<div className="movie-grid">
 				{races.map((race) => (
-					<RaceCard race={race} key={race.id} />
+					<RaceCard
+						race={{
+							name: race.circuit_short_name,
+							date: race.date_start,
+						}}
+						key={race.meeting_key}
+					/>
 				))}
 			</div>
 		</div>

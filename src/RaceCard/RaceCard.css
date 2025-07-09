@@ -1,4 +1,6 @@
 .race-card {
+	width: 250px;
+	height: 120px;
 	position: relative;
 	border: 8px;
 	overflow: hidden;
