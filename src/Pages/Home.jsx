@@ -1,5 +1,6 @@
 import RaceCard from "../RaceCard/RaceCard";
 import { useState } from "react";
+import "./Home.css";
 
 function Home() {
 	const [searchQuery, setSearchQuery] = useState("");
@@ -23,11 +24,11 @@ function Home() {
 				<input
 					type="text"
 					placeholder="Search for Races..."
-					className="search"
+					className="search-input"
 					value={searchQuery}
 					onChange={(e) => setSearchQuery(e.target.value)}
 				></input>
-				<button type="submit" className="serach-btn">
+				<button type="submit" className="search-btn">
 					Search
 				</button>
 			</form>

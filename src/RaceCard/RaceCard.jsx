@@ -1,3 +1,6 @@
+import "./RaceCard.css";
+import icon from "../assets/formula.png";
+
 function RaceCard({ race }) {
 	function favorite() {
 		alert("favorited");
@@ -6,7 +9,7 @@ function RaceCard({ race }) {
 	return (
 		<div className="race-card">
 			<div className="race-img">
-				<img src={race.url} alt={race.name}></img>
+				<img src={icon} alt={race.name}></img>
 				<div className="race-overlay">
 					<button className="favorite-btn" onClick={favorite}>
 						❤

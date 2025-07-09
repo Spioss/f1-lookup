@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
+import "./NavBar.css";
+import icon from "../assets/formula.png";
 
 function NavBar() {
 	return (
 		<nav className="navbar">
-			<div className="navbar-header">
-				<Link to="/">F1 Lookup</Link>
-			</div>
+			<Link to="/" className="navbar-header">
+				F1 Lookup
+			</Link>
 			<div className="navbar-links">
 				<Link to="/" className="nav-link">
 					Home
