@@ -1,6 +1,6 @@
 import RaceCard from "../RaceCard/RaceCard";
 import { useState, useEffect } from "react";
-import { getMeetings } from "../services/api";
+import { getMeetings, getSessionResults } from "../services/api";
 import { formatDate } from "../services/timeformat";
 import "./Home.css";
 import { countryToCode } from "../services/resolvecountry";

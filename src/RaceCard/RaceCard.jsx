@@ -1,5 +1,4 @@
 import "./RaceCard.css";
-import icon from "../assets/british.jpg";
 
 function RaceCard({ race }) {
 	function favorite() {

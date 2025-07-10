@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Favorites from "./Pages/Favorites";
+import Home from "./Home/Home";
+import Favorites from "./Favorites/Favorites";
 import NavBar from "./NavBar/NavBar";
 
 function App() {
