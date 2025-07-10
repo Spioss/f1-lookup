@@ -24,7 +24,7 @@ function Home() {
 	const handleSearch = (e) => {
 		e.preventDefault();
 		alert(searchQuery);
-		//setSearchQuery("");
+		setSearchQuery("");
 	};
 
 	return (
@@ -42,18 +42,23 @@ function Home() {
 				</button>
 			</form>
 			<div className="movie-grid">
-				{races.map((race) => (
-					<RaceCard
-						race={{
-							name: race.meeting_name,
-							date: formatDate(race.date_start),
-							url: `https://flagcdn.com/w640/${
-								countryToCode[race.country_name]
-							}.png`,
-						}}
-						key={race.meeting_key}
-					/>
-				))}
+				{races.map(
+					(race) =>
+						race.meeting_name
+							.toLowerCase()
+							.includes(searchQuery.toLowerCase()) && (
+							<RaceCard
+								race={{
+									name: race.meeting_name,
+									date: formatDate(race.date_start),
+									url: `https://flagcdn.com/w640/${
+										countryToCode[race.country_name]
+									}.png`,
+								}}
+								key={race.meeting_key}
+							/>
+						)
+				)}
 			</div>
 		</div>
 	);
