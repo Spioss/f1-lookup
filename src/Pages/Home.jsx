@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { getMeetings } from "../services/api";
 import { formatDate } from "../services/timeformat";
 import "./Home.css";
+import { countryToCode } from "../services/resolvecountry";
 
 function Home() {
 	const [searchQuery, setSearchQuery] = useState("");
@@ -11,7 +12,7 @@ function Home() {
 	useEffect(() => {
 		async function fetchData() {
 			try {
-				const data = await getMeetings();
+				const data = await getMeetings(2024);
 				setRaces(data);
 			} catch (err) {
 				console.error(err);
@@ -42,15 +43,16 @@ function Home() {
 			</form>
 			<div className="movie-grid">
 				{races.map((race) => (
-					<div className="grid-item">
-						<RaceCard
-							race={{
-								name: race.circuit_short_name,
-								date: formatDate(race.date_start),
-							}}
-							key={race.meeting_key}
-						/>
-					</div>
+					<RaceCard
+						race={{
+							name: race.meeting_name,
+							date: formatDate(race.date_start),
+							url: `https://flagcdn.com/w640/${
+								countryToCode[race.country_name]
+							}.png`,
+						}}
+						key={race.meeting_key}
+					/>
 				))}
 			</div>
 		</div>

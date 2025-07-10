@@ -9,7 +9,7 @@ function RaceCard({ race }) {
 	return (
 		<div className="race-card">
 			<div className="race-img">
-				<img src={icon} alt={race.name}></img>
+				<img src={race.url} alt={race.name}></img>
 				<div className="race-overlay">
 					<button className="favorite-btn" onClick={favorite}>
 						❤
