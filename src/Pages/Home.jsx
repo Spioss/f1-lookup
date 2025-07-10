@@ -1,6 +1,7 @@
 import RaceCard from "../RaceCard/RaceCard";
 import { useState, useEffect } from "react";
 import { getMeetings } from "../services/api";
+import { formatDate } from "../services/timeformat";
 import "./Home.css";
 
 function Home() {
@@ -41,13 +42,15 @@ function Home() {
 			</form>
 			<div className="movie-grid">
 				{races.map((race) => (
-					<RaceCard
-						race={{
-							name: race.circuit_short_name,
-							date: race.date_start,
-						}}
-						key={race.meeting_key}
-					/>
+					<div className="grid-item">
+						<RaceCard
+							race={{
+								name: race.circuit_short_name,
+								date: formatDate(race.date_start),
+							}}
+							key={race.meeting_key}
+						/>
+					</div>
 				))}
 			</div>
 		</div>
