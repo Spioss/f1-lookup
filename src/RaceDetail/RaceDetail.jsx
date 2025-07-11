@@ -24,12 +24,10 @@ export default function RaceDetail() {
 	return (
 		<div className="race-detail">
 			{session
-				.slice() // ak nechceš mutovať originál
+				.slice()
 				.sort((a, b) => {
-					// 1) tie s null/undefined na koniec
 					if (a.position == null) return 1;
 					if (b.position == null) return -1;
-					// 2) obe pozície sú platné, porovnaj číselne
 					return Number(a.position) - Number(b.position);
 				})
 				.map((session) => (
