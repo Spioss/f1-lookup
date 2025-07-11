@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getDrivers, getSessionResults } from "../services/api";
+import "./RaceDetail.css"
 
 export default function RaceDetail() {
 	const { meetingKey } = useParams();
@@ -22,7 +23,7 @@ export default function RaceDetail() {
 	}, []);
 
 	return (
-		<div className="race-detail">
+		<div className="race-detail-context">
 			{session
 				.slice()
 				.sort((a, b) => {
