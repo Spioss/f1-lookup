@@ -27,3 +27,15 @@ export const getSessionResults = async (meeting_key) => {
 	console.log(data);
 	return data;
 };
+
+// NEED WORK ON THIS DONT KNOW
+export const getDrivers = async (meeting_key) => {
+	const response = await fetch(
+		`${BASE_URL}drivers?meeting_key=${meeting_key}`
+	);
+
+	const data = await response.json();
+
+	console.log(data);
+	return data;
+};

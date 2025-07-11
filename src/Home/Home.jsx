@@ -49,6 +49,7 @@ function Home() {
 							.includes(searchQuery.toLowerCase()) && (
 							<RaceCard
 								race={{
+									meetingKey: race.meeting_key,
 									name: race.meeting_name,
 									date: formatDate(race.date_start),
 									url: `https://flagcdn.com/w640/${

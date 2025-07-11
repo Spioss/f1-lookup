@@ -75,3 +75,7 @@
 	font-size: 0.9rem;
 	color: hsl(0, 0%, 60%);
 }
+
+* {
+	text-decoration: none;
+}
