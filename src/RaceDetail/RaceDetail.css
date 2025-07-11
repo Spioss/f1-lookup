@@ -1,0 +1,14 @@
+.race-context {
+	display: flex;
+	justify-content: center;
+}
+
+.race-detail {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 2rem;
+	padding: 2rem;
+	background-color: rgb(102, 51, 153);
+	border-radius: 25px;
+}
