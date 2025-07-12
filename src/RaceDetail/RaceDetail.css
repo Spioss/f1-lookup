@@ -7,8 +7,52 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 2rem;
-	padding: 2rem;
-	background-color: rgb(102, 51, 153);
+	margin-top: 2rem;
 	border-radius: 25px;
+	color: black;
+}
+
+.race-detail h1 {
+	color: white;
+	margin-bottom: 5px;
+}
+
+.table-content {
+	background-color: white;
+	border-collapse: collapse;
+	margin: 0;
+	font-size: 1.2em;
+	min-width: 400px;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.table-content thead tr {
+	background-color: hsl(271, 76%, 53%);
+	color: white;
+	text-align: left;
+	font-weight: bold;
+}
+
+.table-content th,
+td {
+	padding: 12px 15px;
+}
+
+.table-content tbody tr {
+	border-bottom: 1px solid #dddddd;
+}
+
+.table-content tbody tr:nth-of-type(even) {
+	background-color: #f3f3f3;
+}
+
+.table-content tbody tr:last-of-type {
+	border-bottom: 2px solid hsl(271, 76%, 53%);
+}
+
+.dnf-row td {
+	color: hsl(0, 100%, 53%);
+	font-weight: bold;
 }

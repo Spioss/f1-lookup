@@ -26,19 +26,44 @@ export default function RaceDetail() {
 		<div className="race-context">
 			<div className="race-detail">
 				<h1>Session Placement</h1>
-				{session
-					.slice()
-					.sort((a, b) => {
-						if (a.position == null) return 1;
-						if (b.position == null) return -1;
-						return Number(a.position) - Number(b.position);
-					})
-					.map((session) => (
-						<h2 className="drivers" key={session.driver_number}>
-							{session.position ? session.position : "DNF"}{" "}
-							{driversMap[session.driver_number].toUpperCase()}
-						</h2>
-					))}
+				<table className="table-content">
+					<thead>
+						<tr>
+							<th>Position</th>
+							<th>Driver</th>
+							<th>Points</th>
+						</tr>
+					</thead>
+					<tbody>
+						{session
+							.slice()
+							.sort((a, b) => {
+								if (a.position == null) return 1;
+								if (b.position == null) return -1;
+								return Number(a.position) - Number(b.position);
+							})
+							.map((driver) => (
+								<tr
+									key={driver.driver_number}
+									className={
+										driver.position == null ? "dnf-row" : ""
+									}
+								>
+									<td>
+										{driver.position != null
+											? driver.position
+											: "DNF"}
+									</td>
+									<td>
+										{driversMap[
+											driver.driver_number
+										]?.toUpperCase() || "-"}
+									</td>
+									<td>{driver.points}</td>
+								</tr>
+							))}
+					</tbody>
+				</table>
 			</div>
 		</div>
 	);
