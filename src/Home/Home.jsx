@@ -8,22 +8,22 @@ import { countryToCode } from "../services/resolvecountry";
 function Home() {
 	const [searchQuery, setSearchQuery] = useState("");
 	const [races, setRaces] = useState([]);
+	const [year, setYear] = useState(2024);
 
 	useEffect(() => {
 		async function fetchData() {
 			try {
-				const data = await getMeetings(2024);
+				const data = await getMeetings(year);
 				setRaces(data);
 			} catch (err) {
 				console.error(err);
 			}
 		}
 		fetchData();
-	}, []);
+	}, [year]);
 
 	const handleSearch = (e) => {
 		e.preventDefault();
-		alert(searchQuery);
 		setSearchQuery("");
 	};
 
@@ -32,15 +32,26 @@ function Home() {
 			<form onSubmit={handleSearch} className="search-form">
 				<input
 					type="text"
-					placeholder="Search for Races..."
+					placeholder="Search for any Races..."
 					className="search-input"
 					value={searchQuery}
 					onChange={(e) => setSearchQuery(e.target.value)}
 				></input>
-				<button type="submit" className="search-btn">
-					Search
-				</button>
+
+				<div className="year-picker">
+					<label htmlFor="year-select">Year:</label>
+					<select
+						id="year-select"
+						value={year}
+						onChange={(e) => setYear(Number(e.target.value))}
+					>
+						<option value={2023}>2023</option>
+						<option value={2024}>2024</option>
+						<option value={2025}>2025</option>
+					</select>
+				</div>
 			</form>
+
 			<div className="movie-grid">
 				{races.map(
 					(race) =>

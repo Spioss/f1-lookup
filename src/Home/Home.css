@@ -49,3 +49,27 @@
 	gap: 2rem;
 	padding: 1rem;
 }
+
+.year-picker {
+	display: flex;
+	align-items: center;
+}
+
+.year-picker label {
+	margin-right: 0.5rem;
+	font-weight: bold;
+}
+
+.year-picker select {
+	padding: 0.4rem 0.8rem;
+	font-size: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: border-color 0.2s ease;
+}
+
+.year-picker select:focus {
+	outline: none;
+	border-color: hsl(271, 76%, 53%);
+}
