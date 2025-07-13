@@ -30,8 +30,9 @@ export default function RaceDetail() {
 					<thead>
 						<tr>
 							<th>Position</th>
-							<th>Driver</th>
+							<th>Driver Name</th>
 							<th>Points</th>
+							<th>Gap to Leader</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -60,6 +61,11 @@ export default function RaceDetail() {
 										]?.toUpperCase() || "-"}
 									</td>
 									<td>{driver.points}</td>
+									<td>
+										{driver.gap_to_leader == 0
+											? "Leader"
+											: driver.gap_to_leader}
+									</td>
 								</tr>
 							))}
 					</tbody>
