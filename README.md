@@ -118,9 +118,8 @@ Add driver profiles and career statistics <br>
 
 ### Acknowledgments
 
-OpenF1 API for providing comprehensive F1 data
-flagcdn.com for country flag images
-Formula 1 community for inspiration
+OpenF1 API for providing comprehensive F1 data <br>
+flagcdn.com for country flag images <br>
 
 ---
 
