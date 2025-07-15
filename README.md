@@ -116,10 +116,6 @@ Add driver profiles and career statistics <br>
 4. Push to the branch `git push origin feature/amazing-feature`
 5. Open a Pull Request
 
-### Acknowledgments
-
-OpenF1 API for providing comprehensive F1 data <br>
-flagcdn.com for country flag images <br>
 
 ---
 
